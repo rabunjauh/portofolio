@@ -1,0 +1,452 @@
+@import url("https://fonts.googleapis.com/css2?family=Oxygen:wght@400;700&family=Poppins:wght@300;400;500;600&display=swap");
+
+/* Note */
+/* In CSS, vh stands for viewport height and vw for viewport width. As you can see, the first unit is based on the viewport height, and 1vh is equivalent to 1% of the viewport height. */
+/* https://www.freecodecamp.org/news/learn-css-units-em-rem-vh-vw-with-code-examples/ */
+
+/* http://meyerweb.com/eric/tools/css/reset/ 
+   v2.0 | 20110126
+   License: none (public domain)
+*/
+
+html,
+body,
+div,
+span,
+applet,
+object,
+iframe,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p,
+blockquote,
+pre,
+a,
+abbr,
+acronym,
+address,
+big,
+cite,
+code,
+del,
+dfn,
+em,
+img,
+ins,
+kbd,
+q,
+s,
+samp,
+small,
+strike,
+strong,
+sub,
+sup,
+tt,
+var,
+b,
+u,
+i,
+center,
+dl,
+dt,
+dd,
+ol,
+ul,
+li,
+fieldset,
+form,
+label,
+legend,
+table,
+caption,
+tbody,
+tfoot,
+thead,
+tr,
+th,
+td,
+article,
+aside,
+canvas,
+details,
+embed,
+figure,
+figcaption,
+footer,
+header,
+hgroup,
+menu,
+nav,
+output,
+ruby,
+section,
+summary,
+time,
+mark,
+audio,
+video {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  font-size: 100%;
+  font: inherit;
+  vertical-align: baseline;
+}
+/* HTML5 display-role reset for older browsers */
+article,
+aside,
+details,
+figcaption,
+figure,
+footer,
+header,
+hgroup,
+menu,
+nav,
+section {
+  display: block;
+}
+body {
+  line-height: 1;
+}
+ol,
+ul {
+  list-style: none;
+}
+blockquote,
+q {
+  quotes: none;
+}
+blockquote:before,
+blockquote:after,
+q:before,
+q:after {
+  content: "";
+  content: none;
+}
+table {
+  border-collapse: collapse;
+  border-spacing: 0;
+}
+
+body {
+  /* font-family: "Oxygen", sans-serif; */
+  font-family: "Poppins", sans-serif;
+  line-height: 1.5;
+  max-width: 1000px;
+  margin: 0 auto;
+}
+
+/* Hamburger Nav */
+/* Note: Reff:https://www.youtube.com/watch?v=a6-v_0kjYyY&ab_channel=WebProgrammingUNPAS */
+.hamburger-nav {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-direction: column;
+  padding: 2rem;
+  background-color: #f2fae8;
+}
+
+.menu-logo {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 100%;
+}
+
+.nav-toggle {
+  height: 1.5rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  right: 2rem;
+  top: 1.8rem;
+  cursor: pointer;
+}
+
+.nav-toggle span:nth-child(2) {
+  transform-origin: 0 0;
+}
+
+.nav-toggle span:nth-child(4) {
+  transform-origin: 0 100%;
+}
+
+.nav-toggle input:checked ~ span:nth-child(2) {
+  transform: rotate(45deg) translate(0px);
+}
+
+.nav-toggle input:checked ~ span:nth-child(4) {
+  transform: rotate(-45deg) translate(-1px, 0px);
+}
+
+.nav-toggle input:checked ~ span:nth-child(3) {
+  transform: scale(0);
+}
+
+.hamburger-icon {
+  display: block;
+  background-color: black;
+  width: 2rem;
+  border-radius: 0.3rem;
+  height: 0.2rem;
+  transition: 1s;
+}
+
+input {
+  opacity: 0;
+  width: 2rem;
+  height: 2rem;
+  position: absolute;
+  margin-top: -0.3rem;
+  margin-left: -0.01rem;
+  z-index: 99;
+}
+.logo {
+  font-size: 2rem;
+}
+
+.menu-links {
+  display: none;
+  height: 0;
+  width: 100%;
+  transition: all 5s;
+}
+
+.show {
+  display: block;
+  height: auto;
+}
+
+.menu-links ul {
+  /* add ul width with percent to adjust responsive for tablet & big screen */
+  text-align: center;
+}
+
+.menu-links ul li {
+  margin-top: 2rem;
+  list-style: none;
+}
+
+.menu-links ul li a {
+  font-size: 1.5rem;
+  color: #000;
+  text-decoration: none;
+  padding: 0.25rem 0.75rem;
+  width: 15rem;
+  border-radius: 2rem;
+  display: inline-block;
+  background-color: white;
+  border: rgb(53, 53, 53) 0.1rem solid;
+}
+
+/* Sections */
+section {
+  display: flex;
+  flex-direction: column;
+  padding: 2em;
+  /* border: rgb(53, 53, 53) 0.1rem solid; */
+}
+
+.profile {
+  height: 90vmax;
+  text-align: center;
+  font-size: 4vw;
+}
+
+.section__text,
+.about-btn,
+.text-container,
+.details-container {
+  margin-top: 2rem;
+}
+
+.section__text .section__text__p2 span {
+  font-weight: 800;
+}
+
+.profile .section__pic-container img {
+  width: 30vw;
+  min-width: 10rem;
+  border-radius: 50%;
+}
+
+h1 {
+  font-size: 10vw;
+  font-weight: 800;
+}
+
+#social-container {
+  display: flex;
+  justify-content: center;
+  margin-top: 5vw;
+  gap: 10vw;
+  margin-top: 3rem;
+}
+
+#about a {
+  color: black;
+  text-decoration: none;
+  text-decoration-color: white;
+}
+
+a,
+.btn {
+  transition: all 300ms ease;
+}
+
+a:hover {
+  color: grey;
+  /* Note */
+  /* apply underline to text / link */
+  text-decoration: underline;
+  text-underline-offset: 1rem; /* Note: apply space vertical to the text / link */
+  text-decoration-color: rgb(181, 181, 181);
+}
+
+.btn-container {
+  display: flex;
+  justify-content: center;
+  gap: 1rem;
+}
+
+.btn {
+  font-weight: 600;
+  transition: all 300ms ease;
+  padding: 1rem;
+  width: 8rem;
+  border-radius: 2rem;
+}
+
+.btn-color-1,
+.btn-color-2 {
+  border: rgb(53, 53, 53) 0.1rem solid;
+}
+
+.btn-color-1:hover,
+.btn-color-2:hover {
+  cursor: pointer;
+}
+
+.btn-color-1,
+.btn-color-2:hover {
+  background: rgb(53, 53, 53);
+  color: white;
+}
+
+.btn-color-1:hover {
+  background: rgb(0, 0, 0);
+}
+
+.btn-color-2 {
+  background: none;
+}
+
+.btn-color-2:hover {
+  border: rgb(255, 255, 255) 0.1rem solid;
+}
+
+.btn-container {
+  margin-top: 1rem;
+}
+
+h2 {
+  font-size: 1.625rem;
+  font-weight: 800;
+  text-align: center;
+}
+
+section .section-container .about-pic-container,
+.arrow,
+.icon {
+  display: none;
+}
+
+p {
+  margin-top: 1rem;
+}
+
+h3 {
+  font-size: 1.5rem;
+  font-weight: 600;
+}
+
+.details-container {
+  border: rgb(53, 53, 53) 0.1rem solid;
+  border-color: rgb(163, 163, 163);
+  border-radius: 2rem;
+  text-align: center;
+  padding: 1.5rem;
+}
+
+.project-img {
+  width: 60%;
+}
+
+.details-container .article-container span {
+  font-weight: 600;
+}
+
+footer {
+  margin: 0 1rem 3rem 1rem;
+  text-align: center;
+}
+
+footer span {
+  font-weight: 600;
+}
+
+@media (min-width: 768px) {
+  .nav-toggle {
+    display: none;
+  }
+
+  .hamburger-nav {
+    flex-direction: row;
+    background-color: white;
+  }
+
+  .menu-links {
+    display: flex;
+  }
+
+  .menu-links ul {
+    display: flex;
+    align-items: center;
+  }
+
+  .menu-links ul li {
+    margin-top: 0;
+  }
+
+  .menu-links ul li a {
+    width: auto;
+    border: none;
+    background-color: white;
+    padding: 0 0.5rem;
+    text-decoration-color: white;
+  }
+
+  .menu-links ul li a:hover {
+    color: grey;
+    text-decoration: underline;
+    text-decoration-color: rgb(181, 181, 181);
+  }
+
+  .programming-language--details-container,
+  .about-containers {
+    display: flex;
+    justify-content: center;
+    gap: 2rem;
+  }
+
+  .experience-sub-title {
+    font-size: 1rem;
+  }
+}
