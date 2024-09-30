@@ -251,13 +251,14 @@ section {
   display: flex;
   flex-direction: column;
   padding: 2em;
+  margin-bottom: 2em;
   /* border: rgb(53, 53, 53) 0.1rem solid; */
 }
 
 .profile {
   height: 90vmax;
   text-align: center;
-  font-size: 4vw;
+  font-size: 4vmax;
 }
 
 .section__text,
@@ -298,7 +299,7 @@ h1 {
 
 a,
 .btn {
-  transition: all 300ms ease;
+  transition: all 500ms ease;
 }
 
 a:hover {
@@ -308,6 +309,7 @@ a:hover {
   text-decoration: underline;
   text-underline-offset: 1rem; /* Note: apply space vertical to the text / link */
   text-decoration-color: rgb(181, 181, 181);
+  transition: all 500ms ease;
 }
 
 .btn-container {
